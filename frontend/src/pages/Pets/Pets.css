@@ -1,0 +1,28 @@
+.pets-em-breve {
+  max-width: 480px;
+  margin: 96px auto;
+  padding: 32px;
+  text-align: center;
+}
+
+.pets-em-breve__icone {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background-color: var(--color-primary-bg);
+  border-radius: 50%;
+}
+
+.pets-em-breve__titulo {
+  margin: 0 0 12px;
+  color: var(--color-primary-dark);
+}
+
+.pets-em-breve__texto {
+  margin: 0 0 24px;
+  color: var(--color-text-muted);
+}

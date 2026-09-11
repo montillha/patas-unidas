@@ -1,0 +1,326 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  /* tons que já viraram tokens globais (tokens.css) são só aliases aqui, pra não duplicar
+     valor cru e correr risco de dessincronizar; os que não têm equivalente global (tons
+     decorativos específicos da Home) continuam como literal */
+  --home-cream: #FBF5E9;
+  --home-cream-deep: #F4E9D6;
+  --home-paper: var(--color-surface);
+  --home-ink: var(--color-text);
+  --home-ink-soft: var(--color-text-muted);
+  --home-terracotta: var(--color-accent);
+  --home-terracotta-deep: var(--color-accent-hover);
+  --home-blush: #F2C9AE;
+  --home-lilac-bg: #E4DCF0;
+  --home-sage-bg: #DCE6CE;
+  --home-line: var(--color-border);
+
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--home-ink);
+}
+
+.home-page h1,
+.home-page h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+}
+
+/* botões: reaproveita as variantes do Button global, só recoloridas aqui dentro */
+.home-page .btn {
+  border-radius: 11px;
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.home-page .btn--accent {
+  background-color: var(--home-terracotta);
+  box-shadow: 0 4px 0 var(--home-terracotta-deep);
+}
+
+.home-page .btn--accent:hover:not(:disabled) {
+  background-color: var(--home-terracotta);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 0 var(--home-terracotta-deep);
+}
+
+.home-page .btn--accent:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--home-terracotta-deep);
+}
+
+.home-page .btn--outline-primary {
+  background-color: var(--home-paper);
+  color: var(--home-terracotta-deep);
+  border-color: var(--home-terracotta);
+}
+
+.home-page .btn--outline-primary:hover:not(:disabled) {
+  background-color: var(--home-cream-deep);
+}
+
+/* ---------- HERO ---------- */
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  padding: 72px 32px;
+  background-color: var(--home-cream);
+}
+
+.home-hero__content {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 360px;
+}
+
+.home-hero__title {
+  font-size: 2.75rem;
+  line-height: 1.15;
+  color: var(--home-ink);
+  margin: 0 0 16px;
+}
+
+.home-hero__highlight {
+  position: relative;
+  color: var(--home-terracotta-deep);
+  white-space: nowrap;
+}
+
+.home-hero__rabisco {
+  position: absolute;
+  left: -2px;
+  right: -4px;
+  bottom: -8px;
+  width: calc(100% + 6px);
+  height: 14px;
+  color: var(--home-terracotta);
+}
+
+.home-hero__subtitle {
+  color: var(--home-ink-soft);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  margin: 0 0 32px;
+  max-width: 460px;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.home-hero__image {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 320px;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.home-hero__blob {
+  position: absolute;
+  z-index: 0;
+  width: 340px;
+  height: 340px;
+  max-width: 85%;
+  max-height: 85%;
+  background: linear-gradient(135deg, var(--home-blush), var(--home-cream-deep));
+  border-radius: 42% 58% 63% 37% / 45% 41% 59% 55%;
+}
+
+.home-hero__foto {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  filter: drop-shadow(0 16px 30px rgba(58, 33, 20, 0.2));
+  animation: home-flutuar 5s ease-in-out infinite;
+  transition: transform var(--transition-base);
+}
+
+.home-hero__foto:hover {
+  transform: scale(1.03) rotate(-1deg);
+}
+
+.home-hero__washi {
+  position: absolute;
+  z-index: 2;
+  top: 14%;
+  left: 18%;
+  width: 70px;
+  height: 24px;
+  background-color: var(--home-blush);
+  opacity: 0.85;
+  transform: rotate(-6deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home-hero__coracao {
+  position: absolute;
+  z-index: 2;
+  bottom: 8%;
+  right: 6%;
+  width: 56px;
+  height: 56px;
+  transform: rotate(-8deg);
+}
+
+@keyframes home-flutuar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* ---------- COMO FUNCIONA ---------- */
+.home-como-funciona {
+  flex: 1;
+  background-color: var(--home-cream-deep);
+  padding: 72px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  text-align: center;
+}
+
+.home-como-funciona__head {
+  max-width: 520px;
+}
+
+.home-como-funciona__kicker {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--home-terracotta-deep);
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+}
+
+.home-como-funciona__titulo {
+  font-size: 2.1rem;
+  margin: 0;
+  color: var(--home-ink);
+}
+
+.home-como-funciona__descricao {
+  margin: 14px 0 0;
+  color: var(--home-ink-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.home-como-funciona__passos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.home-como-funciona__passo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex: 1 1 240px;
+  max-width: 300px;
+  padding: 30px 24px;
+  background-color: var(--home-paper);
+  border: 1px solid var(--home-line);
+  border-radius: 20px 20px 20px 4px;
+  box-shadow: 0 2px 0 var(--home-line);
+}
+
+.home-como-funciona__icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px 16px 16px 4px;
+  color: var(--home-ink);
+  transition: transform var(--transition-fast);
+}
+
+.home-como-funciona__passo:hover .home-como-funciona__icone {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.home-como-funciona__icone--blush {
+  background-color: var(--home-blush);
+}
+
+.home-como-funciona__icone--lilas {
+  background-color: var(--home-lilac-bg);
+}
+
+.home-como-funciona__icone--sage {
+  background-color: var(--home-sage-bg);
+}
+
+.home-como-funciona__texto {
+  margin: 0;
+  font-weight: 600;
+  color: var(--home-ink);
+}
+
+/* ---------- CTA BANNER ---------- */
+.home-cta-banner {
+  margin: 0 32px 64px;
+  padding: 64px 32px;
+  text-align: center;
+  background-color: var(--home-terracotta);
+  border-radius: 28px 28px 28px 6px;
+}
+
+.home-cta-banner__titulo {
+  color: #FFFFFF;
+  font-size: 2rem;
+  margin: 0 auto;
+  max-width: 520px;
+}
+
+.home-cta-banner__texto {
+  margin: 14px auto 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  max-width: 440px;
+}
+
+.home-cta-banner .btn {
+  margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    padding: 48px 20px;
+  }
+
+  .home-como-funciona {
+    padding: 48px 20px;
+  }
+
+  .home-cta-banner {
+    margin: 0 20px 48px;
+    padding: 48px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__foto {
+    animation: none;
+  }
+}
