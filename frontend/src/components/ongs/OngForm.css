@@ -1,0 +1,17 @@
+.ong-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
+@media (max-width: 480px) {
+  .ong-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ong-form__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}

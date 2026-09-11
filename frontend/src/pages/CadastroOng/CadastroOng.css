@@ -1,0 +1,55 @@
+.cadastro-ong {
+  max-width: 640px;
+  margin: 48px auto;
+  padding: 32px;
+}
+
+.cadastro-ong__card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 32px;
+}
+
+.cadastro-ong__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cadastro-ong__icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background-color: var(--color-primary-bg);
+  border-radius: var(--radius-md);
+}
+
+.cadastro-ong__title {
+  margin: 0;
+  color: var(--color-primary-dark);
+}
+
+.cadastro-ong__subtitle {
+  margin: 4px 0 0;
+  color: var(--color-text-muted);
+}
+
+.cadastro-ong__mensagem {
+  margin: 0 0 var(--spacing-form-gap);
+  font-weight: var(--font-weight-heading);
+}
+
+.cadastro-ong__mensagem--sucesso {
+  color: var(--color-success);
+}
+
+.cadastro-ong__mensagem--erro {
+  color: var(--color-error);
+}

@@ -1,0 +1,45 @@
+.ong-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ong-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(58, 44, 46, 0.12);
+}
+
+.ong-card__icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  background-color: var(--color-primary-bg);
+  border-radius: var(--radius-md);
+}
+
+.ong-card__nome {
+  margin: 0 0 4px;
+  color: var(--color-primary-dark);
+  font-weight: var(--font-weight-heading);
+}
+
+.ong-card__local {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}

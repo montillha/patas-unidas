@@ -1,0 +1,102 @@
+.detalhes-ong {
+  max-width: 720px;
+  margin: 0 auto 64px;
+}
+
+.detalhes-ong__voltar {
+  display: inline-block;
+  margin: 24px 32px 0;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-heading);
+}
+
+.detalhes-ong__voltar:hover {
+  color: var(--color-primary-hover);
+}
+
+.detalhes-ong__cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 16px 32px 0;
+  padding: 32px;
+  background-color: var(--color-primary-dark);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+}
+
+.detalhes-ong__icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+}
+
+.detalhes-ong__nome {
+  margin: 0 0 4px;
+  color: #FFFFFF;
+}
+
+.detalhes-ong__local {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.detalhes-ong__corpo {
+  padding: 32px;
+}
+
+.detalhes-ong__descricao {
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.detalhes-ong__endereco {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  margin: 0 0 24px;
+}
+
+.detalhes-ong__contato {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.detalhes-ong__contato-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+}
+
+.detalhes-ong__contato-item a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.detalhes-ong__contato-item a:hover {
+  color: var(--color-primary-hover);
+}
+
+.detalhes-ong__mensagem {
+  padding: 48px 32px;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.detalhes-ong__mensagem--erro {
+  color: var(--color-error);
+}
