@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS contas (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(150) NOT NULL UNIQUE,
+  senha_hash VARCHAR(255) NOT NULL,
+  tipo VARCHAR(20) NOT NULL CHECK (tipo IN ('ong', 'usuario')),
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);

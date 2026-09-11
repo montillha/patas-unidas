@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS ongs (
+  id SERIAL PRIMARY KEY,
+  conta_id INTEGER NOT NULL UNIQUE REFERENCES contas(id),
+  nome VARCHAR(150) NOT NULL,
+  telefone VARCHAR(20),
+  endereco VARCHAR(255) NOT NULL,
+  cidade VARCHAR(100) NOT NULL,
+  estado CHAR(2) NOT NULL,
+  descricao TEXT,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
