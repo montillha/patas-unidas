@@ -1,0 +1,28 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: patas_unidas
+      DB_USER: patas_unidas
+      DB_PASSWORD: patas_unidas
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: patas_unidas
+      POSTGRES_USER: patas_unidas
+      POSTGRES_PASSWORD: patas_unidas
+    ports:
+      - "5432:5432"
+    volumes:
+      - patas_unidas_db:/var/lib/postgresql/data
+
+volumes:
+  patas_unidas_db:
