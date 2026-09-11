@@ -1,0 +1,40 @@
+:root {
+  /* marca — paleta "quente" (creme/terracota), padronizada com a Home */
+  --color-primary: #D9704A;
+  --color-primary-hover: #B85A38;
+  --color-primary-bg: #F2C9AE;
+  --color-primary-dark: #3A2C2E;
+
+  /* CTA / ações principais */
+  --color-accent: #D9704A;
+  --color-accent-hover: #B85A38;
+  --color-accent-bg: #F4E9D6;
+
+  /* estado de formulário */
+  --color-error: #DC2626;
+  --color-error-bg: #FEE2E2;
+  --color-success: #16A34A;
+
+  /* neutros */
+  --color-text: #3A2C2E;
+  --color-text-muted: #6B5A56;
+  --color-border: rgba(58, 44, 46, 0.12);
+  --color-surface: #FFFDF8;
+
+  /* forma */
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-focus: 0 0 0 3px rgba(217, 112, 74, 0.15);
+
+  /* movimento */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+
+  /* espaçamento de formulário */
+  --spacing-form-gap: 20px;
+
+  /* tipografia */
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+}
