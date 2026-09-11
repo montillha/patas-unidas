@@ -1,0 +1,51 @@
+.input-field {
+  margin-bottom: var(--spacing-form-gap);
+}
+
+.input-field__label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: var(--font-weight-heading);
+  color: var(--color-text);
+}
+
+.input-field__control {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.input-field__control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+/* remove o "chrome" nativo do select (moldura quadrada, seta cinza do SO) pra respeitar
+   nossa borda/raio/cor — a lista de opções aberta continua sendo desenhada pelo SO, isso
+   nenhum CSS resolve sem trocar por um dropdown customizado */
+select.input-field__control {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B5A56' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+}
+
+.input-field--error .input-field__control {
+  border-color: var(--color-error);
+}
+
+.input-field__error {
+  margin: 6px 0 0;
+  font-size: 0.875rem;
+  color: var(--color-error);
+}

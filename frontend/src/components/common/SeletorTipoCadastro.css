@@ -1,0 +1,34 @@
+.seletor-tipo-cadastro {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 24px;
+  background-color: var(--color-primary-bg);
+  border-radius: var(--radius-md);
+}
+
+.seletor-tipo-cadastro__opcao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: calc(var(--radius-md) - 4px);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-heading);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.seletor-tipo-cadastro__opcao:hover {
+  color: var(--color-primary-dark);
+}
+
+.seletor-tipo-cadastro__opcao--ativa,
+.seletor-tipo-cadastro__opcao--ativa:hover {
+  background-color: var(--color-surface);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
