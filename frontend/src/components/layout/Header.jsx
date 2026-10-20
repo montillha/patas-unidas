@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Icon } from '../common/Icon';
 import { Button } from '../common/Button';
 import { useAuth } from '../../hooks/useAuth';
+import { MenuConta } from './MenuConta';
 import './Header.css';
 
 export function Header() {
@@ -26,21 +27,16 @@ export function Header() {
       </Link>
       <nav className="header__nav">
         <div className="header__links">
-          <span className="header__link header__link--em-breve" title="Em breve">
+          <Link to="/pets" className="header__link">
             Pets
-          </span>
+          </Link>
           <Link to="/ongs" className="header__link">
             ONGs
           </Link>
         </div>
         <div className="header__actions">
           {conta ? (
-            <>
-              <span className="header__link">Olá, {perfil?.nome}</span>
-              <button type="button" className="header__link header__link--botao" onClick={handleSair}>
-                Sair
-              </button>
-            </>
+            <MenuConta conta={conta} perfil={perfil} onSair={handleSair} />
           ) : (
             <>
               {!naPaginaDeEntrar && (
