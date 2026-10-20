@@ -10,3 +10,6 @@ export const ongSchema = z.object({
   estado: z.string().trim().length(2, 'Estado deve ser a sigla com 2 letras.'),
   descricao: z.string().optional(),
 });
+
+// Na edição, e-mail e senha pertencem à conta e não entram no formulário.
+export const ongEdicaoSchema = ongSchema.omit({ email: true, senha: true });

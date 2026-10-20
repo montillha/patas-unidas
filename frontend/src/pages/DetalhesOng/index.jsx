@@ -69,6 +69,11 @@ export default function DetalhesOng() {
                 {ong.cidade}, {ong.estado}
               </p>
             </div>
+            {ehDono && (
+              <Link to={`/ongs/${ong.id}/editar`} className="detalhes-ong__editar">
+                <Button variant="outline">Editar perfil</Button>
+              </Link>
+            )}
           </div>
 
           <div className="detalhes-ong__corpo">

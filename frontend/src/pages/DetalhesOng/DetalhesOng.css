@@ -128,3 +128,19 @@
   margin: 0;
   color: var(--color-text-muted);
 }
+
+.detalhes-ong__editar {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* O cabeçalho é escuro: o botão de contorno neutro precisa de texto e borda claros. */
+.detalhes-ong__editar .btn {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.6);
+  background-color: transparent;
+}
+
+.detalhes-ong__editar .btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}

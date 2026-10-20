@@ -3,6 +3,7 @@ import Home from '../pages/Home';
 import CadastroOng from '../pages/CadastroOng';
 import ListaOngs from '../pages/ListaOngs';
 import DetalhesOng from '../pages/DetalhesOng';
+import EditarOng from '../pages/EditarOng';
 import Login from '../pages/Login';
 import CadastroUsuario from '../pages/CadastroUsuario';
 import Pets from '../pages/Pets';
@@ -35,6 +36,14 @@ export function AppRoutes() {
       <Route path="/pets/:id" element={<DetalhesPet />} />
       <Route path="/usuarios/cadastro" element={<CadastroUsuario />} />
       <Route path="/ongs/cadastro" element={<CadastroOng />} />
+      <Route
+        path="/ongs/:id/editar"
+        element={
+          <RotaProtegida tipo="ong">
+            <EditarOng />
+          </RotaProtegida>
+        }
+      />
       <Route path="/ongs/:id" element={<DetalhesOng />} />
       <Route path="/ongs" element={<ListaOngs />} />
     </Routes>
