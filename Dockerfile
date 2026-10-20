@@ -15,4 +15,5 @@ COPY backend/ .
 COPY --from=frontend-build /app/frontend/dist ./public
 
 EXPOSE 3000
-CMD ["node", "server.js"]
+# Aplica as migrations pendentes (idempotente, ver src/db/migrate.js) antes de subir o servidor.
+CMD ["sh", "-c", "node src/db/migrate.js && node server.js"]

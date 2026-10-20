@@ -1,3 +1,4 @@
+# As variáveis ${...} são lidas do arquivo .env na raiz do projeto (copie de .env.example).
 services:
   app:
     build: .
@@ -7,22 +8,30 @@ services:
       PORT: 3000
       DB_HOST: db
       DB_PORT: 5432
-      DB_NAME: patas_unidas
-      DB_USER: patas_unidas
-      DB_PASSWORD: patas_unidas
+      DB_NAME: ${DB_NAME:-patas_unidas}
+      DB_USER: ${DB_USER:-patas_unidas}
+      DB_PASSWORD: ${DB_PASSWORD:-patas_unidas}
+      JWT_SECRET: ${JWT_SECRET:?Defina JWT_SECRET no arquivo .env (veja .env.example)}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-7d}
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: patas_unidas
-      POSTGRES_USER: patas_unidas
-      POSTGRES_PASSWORD: patas_unidas
+      POSTGRES_DB: ${DB_NAME:-patas_unidas}
+      POSTGRES_USER: ${DB_USER:-patas_unidas}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-patas_unidas}
     ports:
       - "5432:5432"
     volumes:
       - patas_unidas_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-patas_unidas} -d ${DB_NAME:-patas_unidas}"]
+      interval: 3s
+      timeout: 3s
+      retries: 15
 
 volumes:
   patas_unidas_db:
