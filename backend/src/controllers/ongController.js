@@ -28,4 +28,13 @@ async function buscarPorId(req, res, next) {
   }
 }
 
-module.exports = { criar, listar, buscarPorId };
+async function atualizar(req, res, next) {
+  try {
+    const ong = await ongService.atualizarOng(req.params.id, req.body, req.conta.perfilId);
+    res.json(ong);
+  } catch (err) {
+    next(err);
+  }
+}
+
+module.exports = { criar, listar, buscarPorId, atualizar };

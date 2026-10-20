@@ -43,4 +43,13 @@ async function listar() {
   return rows;
 }
 
-module.exports = { criar, buscarPorId, buscarPorContaId, listar };
+async function atualizar(id, { nome, telefone, endereco, cidade, estado, descricao }) {
+  await pool.query(
+    `UPDATE ongs
+     SET nome = $1, telefone = $2, endereco = $3, cidade = $4, estado = $5, descricao = $6
+     WHERE id = $7`,
+    [nome, telefone, endereco, cidade, estado, descricao, id]
+  );
+}
+
+module.exports = { criar, buscarPorId, buscarPorContaId, listar, atualizar };
