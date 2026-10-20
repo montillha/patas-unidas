@@ -30,4 +30,18 @@ class ErroDeConflito extends Error {
   }
 }
 
-module.exports = { ErroDeValidacao, ErroDeAutenticacao, ErroDeAutorizacao, ErroDeConflito };
+class ErroNaoEncontrado extends Error {
+  constructor(mensagem) {
+    super(mensagem);
+    this.name = 'ErroNaoEncontrado';
+    this.status = 404;
+  }
+}
+
+module.exports = {
+  ErroDeValidacao,
+  ErroDeAutenticacao,
+  ErroDeAutorizacao,
+  ErroDeConflito,
+  ErroNaoEncontrado,
+};
