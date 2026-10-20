@@ -1,0 +1,158 @@
+.pet-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
+@media (max-width: 480px) {
+  .pet-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pet-form__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.pet-form__fotos {
+  margin-bottom: var(--spacing-form-gap);
+}
+
+.pet-form__fotos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pet-form__foto {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  background-color: var(--color-primary-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.pet-form__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-form__foto--adicionar {
+  cursor: pointer;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  border-style: dashed;
+  transition: background-color var(--transition-fast);
+}
+
+.pet-form__foto--adicionar:hover,
+.pet-form__foto--adicionar:focus-within {
+  background-color: var(--color-accent-bg);
+}
+
+.pet-form__foto-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pet-form__foto-remover {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  line-height: 1;
+  font-size: 1rem;
+  color: #FFFFFF;
+  background-color: rgba(58, 44, 46, 0.75);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pet-form__fotos-ajuda {
+  margin: 8px 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.pet-form__erro {
+  margin: 6px 0 0;
+  color: var(--color-error);
+  font-size: 0.85rem;
+}
+
+.pet-form__especie {
+  margin: 0 0 var(--spacing-form-gap);
+  padding: 0;
+  border: none;
+}
+
+.pet-form__opcoes {
+  display: flex;
+  gap: 12px;
+}
+
+.pet-form__opcao {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  cursor: pointer;
+  color: var(--color-text);
+  font-weight: var(--font-weight-heading);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.pet-form__opcao input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pet-form__opcao:has(input:checked) {
+  color: #FFFFFF;
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.pet-form__opcao:has(input:focus-visible) {
+  box-shadow: var(--shadow-focus);
+}
+
+.pet-form__textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.pet-form__checks {
+  display: flex;
+  gap: 24px;
+  margin-bottom: var(--spacing-form-gap);
+}
+
+.pet-form__check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}

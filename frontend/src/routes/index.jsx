@@ -6,6 +6,9 @@ import DetalhesOng from '../pages/DetalhesOng';
 import Login from '../pages/Login';
 import CadastroUsuario from '../pages/CadastroUsuario';
 import Pets from '../pages/Pets';
+import CadastroPet from '../pages/CadastroPet';
+import DetalhesPet from '../pages/DetalhesPet';
+import { RotaProtegida } from '../components/common/RotaProtegida';
 
 export function AppRoutes() {
   return (
@@ -13,6 +16,23 @@ export function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/entrar" element={<Login />} />
       <Route path="/pets" element={<Pets />} />
+      <Route
+        path="/pets/cadastro"
+        element={
+          <RotaProtegida tipo="ong">
+            <CadastroPet />
+          </RotaProtegida>
+        }
+      />
+      <Route
+        path="/pets/:id/editar"
+        element={
+          <RotaProtegida tipo="ong">
+            <CadastroPet />
+          </RotaProtegida>
+        }
+      />
+      <Route path="/pets/:id" element={<DetalhesPet />} />
       <Route path="/usuarios/cadastro" element={<CadastroUsuario />} />
       <Route path="/ongs/cadastro" element={<CadastroOng />} />
       <Route path="/ongs/:id" element={<DetalhesOng />} />
