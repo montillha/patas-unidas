@@ -100,3 +100,31 @@
 .detalhes-ong__mensagem--erro {
   color: var(--color-error);
 }
+
+.detalhes-ong__pets {
+  padding: 0 32px;
+}
+
+.detalhes-ong__pets-cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.detalhes-ong__pets-titulo {
+  margin: 0;
+  color: var(--color-primary-dark);
+  font-size: 1.25rem;
+}
+
+.detalhes-ong__pets-titulo--secundario {
+  margin: 40px 0 20px;
+}
+
+.detalhes-ong__pets-vazio {
+  margin: 0;
+  color: var(--color-text-muted);
+}
